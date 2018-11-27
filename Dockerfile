@@ -71,7 +71,7 @@ RUN curl -L >hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.4
  	&& tar -xzvf hugo.tar.gz -C /usr/bin \
  	&& rm hugo.tar.gz
 
-# ANDROID-SDK
+# ANDROID-SDK ##para docker
 RUN cd var/lib \
   && mkdir android-sdk \
   && cd android-sdk \
