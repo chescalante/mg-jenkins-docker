@@ -72,17 +72,17 @@ RUN curl -L >hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v0.4
  	&& rm hugo.tar.gz
 
 # ANDROID-SDK
-RUN cd var/lib \
-  && mkdir android-sdk \
-  && cd android-sdk \
-  && curl https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip -o android-sdk.zip \
-  && apt-get install unzip \
-  && unzip android-sdk.zip -d . \
-  && rm android-sdk.zip \
-  && export PATH=/var/lib/android-sdk/tools:/var/lib/android-sdk/tools/bin:$PATH \
-  && sdkmanager "build-tools;26.0.3" "platforms;android-26" "extras;android;m2repository" "extras;google;m2repository" \
-  && sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2" "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2" \
-  && chmod -R 777 /var/lib/android-sdk
+# RUN cd var/lib \
+#   && mkdir android-sdk \
+#   && cd android-sdk \
+#   && curl https://dl.google.com/android/repository/sdk-tools-linux-4333796.zip -o android-sdk.zip \
+#   && apt-get install unzip \
+#   && unzip android-sdk.zip -d . \
+#   && rm android-sdk.zip \
+#   && export PATH=/var/lib/android-sdk/tools:/var/lib/android-sdk/tools/bin:$PATH \
+#   && sdkmanager "build-tools;26.0.3" "platforms;android-26" "extras;android;m2repository" "extras;google;m2repository" \
+#   && sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2" "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2" \
+#   && chmod -R 777 /var/lib/android-sdk
 
 ENV DOTNET_CLI_TELEMETRY_OPTOUT 1
 ENV DOTNET_SKIP_FIRST_TIME_EXPERIENCE 1
