@@ -88,7 +88,8 @@ ENV DOTNET_CLI_TELEMETRY_OPTOUT 1
 ENV DOTNET_SKIP_FIRST_TIME_EXPERIENCE 1
 
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
-RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
+# RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
+RUN /usr/local/bin/plugins.sh < /usr/share/jenkins/ref/plugins.txt
 
 COPY entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
